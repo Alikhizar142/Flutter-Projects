@@ -115,350 +115,363 @@ class _tic_tac_toeState extends State<tic_tac_toe> {
     return Center(
       child: Scaffold(
         body: SafeArea(
-          child: Column(children: [
-            const SizedBox(
-              height: 30,
-            ),
-            Container(
-                height: 100,
-                width: 250,
-                decoration: const BoxDecoration(color: Colors.black),
-                child: const Center(
-                  child: Text("TIC TAC TOE ",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                          fontFamily: 'Times New Roman',
-                          decoration: TextDecoration.underline,
-                          decorationStyle: TextDecorationStyle.double)),
-                )),
-            const SizedBox(
-              height: 30,
-            ),
-            Expanded(
-                child: GridView(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3, mainAxisSpacing: 3, crossAxisSpacing: 3),
-              children: [
-                GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (choice == 1) {
-                          index0 = 1;
-                          choice = 2;
-                        } else if (choice == 2) {
-                          index0 = 2;
+          child: Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(colors: [
+              Colors.lightBlue,
+              Colors.grey,
+              Colors.purpleAccent,
+              Colors.black
+            ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
+            child: Column(children: [
+              const SizedBox(
+                height: 30,
+              ),
+              Container(
+                  height: 100,
+                  width: 250,
+                  decoration: const BoxDecoration(
+                      color: Colors.black,
+                      backgroundBlendMode: BlendMode.lighten),
+                  child: const Center(
+                    child: Text("TIC TAC TOE ",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 40,
+                            fontFamily: 'Times New Roman',
+                            decoration: TextDecoration.underline,
+                            decorationStyle: TextDecorationStyle.double)),
+                  )),
+              const SizedBox(
+                height: 30,
+              ),
+              Expanded(
+                  child: GridView(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3, mainAxisSpacing: 3, crossAxisSpacing: 3),
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (choice == 1) {
+                            index0 = 1;
+                            choice = 2;
+                          } else if (choice == 2) {
+                            index0 = 2;
+                            choice = 1;
+                          }
+                          check();
+                        });
+                      },
+                      child: index0 == 1
+                          ? Container(
+                              color: Colors.black,
+                              child: Image.asset(
+                                'images/X.png',
+                                color: Colors.red,
+                              ))
+                          : index0 == 2
+                              ? Container(
+                                  color: Colors.black,
+                                  child: Image.asset(
+                                    'images/0.png',
+                                    color: Colors.green,
+                                  ),
+                                )
+                              : Container(
+                                  color: Colors.black,
+                                )),
+                  GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (choice == 1) {
+                            index1 = 1;
+                            choice = 2;
+                          } else if (choice == 2) {
+                            index1 = 2;
+                            choice = 1;
+                          }
+                          check();
+                        });
+                      },
+                      child: index1 == 1
+                          ? Container(
+                              color: Colors.black,
+                              child: Image.asset(
+                                'images/X.png',
+                                color: Colors.red,
+                              ))
+                          : index1 == 2
+                              ? Container(
+                                  color: Colors.black,
+                                  child: Image.asset(
+                                    'images/0.png',
+                                    color: Colors.green,
+                                  ),
+                                )
+                              : Container(
+                                  color: Colors.black,
+                                )),
+                  GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (choice == 1) {
+                            index2 = 1;
+                            choice = 2;
+                          } else if (choice == 2) {
+                            index2 = 2;
+                            choice = 1;
+                          }
+                          check();
+                        });
+                      },
+                      child: index2 == 1
+                          ? Container(
+                              color: Colors.black,
+                              child: Image.asset(
+                                'images/X.png',
+                                color: Colors.red,
+                              ))
+                          : index2 == 2
+                              ? Container(
+                                  color: Colors.black,
+                                  child: Image.asset(
+                                    'images/0.png',
+                                    color: Colors.green,
+                                  ),
+                                )
+                              : Container(
+                                  color: Colors.black,
+                                )),
+                  GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (choice == 1) {
+                            index3 = 1;
+                            choice = 2;
+                          } else if (choice == 2) {
+                            index3 = 2;
+                            choice = 1;
+                          }
+                          check();
+                        });
+                      },
+                      child: index3 == 1
+                          ? Container(
+                              color: Colors.black,
+                              child: Image.asset(
+                                'images/X.png',
+                                color: Colors.red,
+                              ))
+                          : index3 == 2
+                              ? Container(
+                                  color: Colors.black,
+                                  child: Image.asset(
+                                    'images/0.png',
+                                    color: Colors.green,
+                                  ),
+                                )
+                              : Container(
+                                  color: Colors.black,
+                                )),
+                  GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (choice == 1) {
+                            index4 = 1;
+                            choice = 2;
+                          } else if (choice == 2) {
+                            index4 = 2;
+                            choice = 1;
+                          }
+                          check();
+                        });
+                      },
+                      child: index4 == 1
+                          ? Container(
+                              color: Colors.black,
+                              child: Image.asset(
+                                'images/X.png',
+                                color: Colors.red,
+                              ))
+                          : index4 == 2
+                              ? Container(
+                                  color: Colors.black,
+                                  child: Image.asset(
+                                    'images/0.png',
+                                    color: Colors.green,
+                                  ),
+                                )
+                              : Container(
+                                  color: Colors.black,
+                                )),
+                  GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (choice == 1) {
+                            index5 = 1;
+                            choice = 2;
+                          } else if (choice == 2) {
+                            index5 = 2;
+                            choice = 1;
+                          }
+                          check();
+                        });
+                      },
+                      child: index5 == 1
+                          ? Container(
+                              color: Colors.black,
+                              child: Image.asset(
+                                'images/X.png',
+                                color: Colors.red,
+                              ))
+                          : index5 == 2
+                              ? Container(
+                                  color: Colors.black,
+                                  child: Image.asset(
+                                    'images/0.png',
+                                    color: Colors.green,
+                                  ),
+                                )
+                              : Container(
+                                  color: Colors.black,
+                                )),
+                  GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (choice == 1) {
+                            index6 = 1;
+                            choice = 2;
+                          } else if (choice == 2) {
+                            index6 = 2;
+                            choice = 1;
+                          }
+                          check();
+                        });
+                      },
+                      child: index6 == 1
+                          ? Container(
+                              color: Colors.black,
+                              child: Image.asset(
+                                'images/X.png',
+                                color: Colors.red,
+                              ))
+                          : index6 == 2
+                              ? Container(
+                                  color: Colors.black,
+                                  child: Image.asset(
+                                    'images/0.png',
+                                    color: Colors.green,
+                                  ),
+                                )
+                              : Container(
+                                  color: Colors.black,
+                                )),
+                  GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (choice == 1) {
+                            index7 = 1;
+                            choice = 2;
+                          } else if (choice == 2) {
+                            index7 = 2;
+                            choice = 1;
+                          }
+                          check();
+                        });
+                      },
+                      child: index7 == 1
+                          ? Container(
+                              color: Colors.black,
+                              child: Image.asset(
+                                'images/X.png',
+                                color: Colors.red,
+                              ))
+                          : index7 == 2
+                              ? Container(
+                                  color: Colors.black,
+                                  child: Image.asset(
+                                    'images/0.png',
+                                    color: Colors.green,
+                                  ),
+                                )
+                              : Container(
+                                  color: Colors.black,
+                                )),
+                  GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (choice == 1) {
+                            index8 = 1;
+                            choice = 2;
+                          } else if (choice == 2) {
+                            index8 = 2;
+                            choice = 1;
+                          }
+                          check();
+                        });
+                      },
+                      child: index8 == 1
+                          ? Container(
+                              color: Colors.black,
+                              child: Image.asset(
+                                'images/X.png',
+                                color: Colors.red,
+                              ))
+                          : index8 == 2
+                              ? Container(
+                                  color: Colors.black,
+                                  child: Image.asset(
+                                    'images/0.png',
+                                    color: Colors.green,
+                                  ),
+                                )
+                              : Container(
+                                  color: Colors.black,
+                                )),
+                ],
+              )),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                "Press  ''start'' to Start the Game",
+                style: TextStyle(fontSize: 25, color: Colors.white70),
+              ),
+              choice == 0
+                  ? ElevatedButton(
+                      onPressed: () {
+                        setState(() {
                           choice = 1;
-                        }
-                        check();
-                      });
-                    },
-                    child: index0 == 1
-                        ? Container(
-                            color: Colors.black,
-                            child: Image.asset(
-                              'images/X.png',
-                              color: Colors.red,
-                            ))
-                        : index0 == 2
-                            ? Container(
-                                color: Colors.black,
-                                child: Image.asset(
-                                  'images/0.png',
-                                  color: Colors.green,
-                                ),
-                              )
-                            : Container(
-                                color: Colors.black,
-                              )),
-                GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (choice == 1) {
-                          index1 = 1;
-                          choice = 2;
-                        } else if (choice == 2) {
-                          index1 = 2;
+                        });
+                      },
+                      child: const Text(
+                        "Start",
+                        style: TextStyle(
+                          fontSize: 25,
+                        ),
+                      ))
+                  : ElevatedButton(
+                      onPressed: () {
+                        setState(() {
                           choice = 1;
-                        }
-                        check();
-                      });
-                    },
-                    child: index1 == 1
-                        ? Container(
-                            color: Colors.black,
-                            child: Image.asset(
-                              'images/X.png',
-                              color: Colors.red,
-                            ))
-                        : index1 == 2
-                            ? Container(
-                                color: Colors.black,
-                                child: Image.asset(
-                                  'images/0.png',
-                                  color: Colors.green,
-                                ),
-                              )
-                            : Container(
-                                color: Colors.black,
-                              )),
-                GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (choice == 1) {
-                          index2 = 1;
-                          choice = 2;
-                        } else if (choice == 2) {
-                          index2 = 2;
-                          choice = 1;
-                        }
-                        check();
-                      });
-                    },
-                    child: index2 == 1
-                        ? Container(
-                            color: Colors.black,
-                            child: Image.asset(
-                              'images/X.png',
-                              color: Colors.red,
-                            ))
-                        : index2 == 2
-                            ? Container(
-                                color: Colors.black,
-                                child: Image.asset(
-                                  'images/0.png',
-                                  color: Colors.green,
-                                ),
-                              )
-                            : Container(
-                                color: Colors.black,
-                              )),
-                GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (choice == 1) {
-                          index3 = 1;
-                          choice = 2;
-                        } else if (choice == 2) {
-                          index3 = 2;
-                          choice = 1;
-                        }
-                        check();
-                      });
-                    },
-                    child: index3 == 1
-                        ? Container(
-                            color: Colors.black,
-                            child: Image.asset(
-                              'images/X.png',
-                              color: Colors.red,
-                            ))
-                        : index3 == 2
-                            ? Container(
-                                color: Colors.black,
-                                child: Image.asset(
-                                  'images/0.png',
-                                  color: Colors.green,
-                                ),
-                              )
-                            : Container(
-                                color: Colors.black,
-                              )),
-                GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (choice == 1) {
-                          index4 = 1;
-                          choice = 2;
-                        } else if (choice == 2) {
-                          index4 = 2;
-                          choice = 1;
-                        }
-                        check();
-                      });
-                    },
-                    child: index4 == 1
-                        ? Container(
-                            color: Colors.black,
-                            child: Image.asset(
-                              'images/X.png',
-                              color: Colors.red,
-                            ))
-                        : index4 == 2
-                            ? Container(
-                                color: Colors.black,
-                                child: Image.asset(
-                                  'images/0.png',
-                                  color: Colors.green,
-                                ),
-                              )
-                            : Container(
-                                color: Colors.black,
-                              )),
-                GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (choice == 1) {
-                          index5 = 1;
-                          choice = 2;
-                        } else if (choice == 2) {
-                          index5 = 2;
-                          choice = 1;
-                        }
-                        check();
-                      });
-                    },
-                    child: index5 == 1
-                        ? Container(
-                            color: Colors.black,
-                            child: Image.asset(
-                              'images/X.png',
-                              color: Colors.red,
-                            ))
-                        : index5 == 2
-                            ? Container(
-                                color: Colors.black,
-                                child: Image.asset(
-                                  'images/0.png',
-                                  color: Colors.green,
-                                ),
-                              )
-                            : Container(
-                                color: Colors.black,
-                              )),
-                GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (choice == 1) {
-                          index6 = 1;
-                          choice = 2;
-                        } else if (choice == 2) {
-                          index6 = 2;
-                          choice = 1;
-                        }
-                        check();
-                      });
-                    },
-                    child: index6 == 1
-                        ? Container(
-                            color: Colors.black,
-                            child: Image.asset(
-                              'images/X.png',
-                              color: Colors.red,
-                            ))
-                        : index6 == 2
-                            ? Container(
-                                color: Colors.black,
-                                child: Image.asset(
-                                  'images/0.png',
-                                  color: Colors.green,
-                                ),
-                              )
-                            : Container(
-                                color: Colors.black,
-                              )),
-                GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (choice == 1) {
-                          index7 = 1;
-                          choice = 2;
-                        } else if (choice == 2) {
-                          index7 = 2;
-                          choice = 1;
-                        }
-                        check();
-                      });
-                    },
-                    child: index7 == 1
-                        ? Container(
-                            color: Colors.black,
-                            child: Image.asset(
-                              'images/X.png',
-                              color: Colors.red,
-                            ))
-                        : index7 == 2
-                            ? Container(
-                                color: Colors.black,
-                                child: Image.asset(
-                                  'images/0.png',
-                                  color: Colors.green,
-                                ),
-                              )
-                            : Container(
-                                color: Colors.black,
-                              )),
-                GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (choice == 1) {
-                          index8 = 1;
-                          choice = 2;
-                        } else if (choice == 2) {
-                          index8 = 2;
-                          choice = 1;
-                        }
-                        check();
-                      });
-                    },
-                    child: index8 == 1
-                        ? Container(
-                            color: Colors.black,
-                            child: Image.asset(
-                              'images/X.png',
-                              color: Colors.red,
-                            ))
-                        : index8 == 2
-                            ? Container(
-                                color: Colors.black,
-                                child: Image.asset(
-                                  'images/0.png',
-                                  color: Colors.green,
-                                ),
-                              )
-                            : Container(
-                                color: Colors.black,
-                              )),
-              ],
-            )),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              "Press  ''start'' to Start the Game",
-              style: TextStyle(fontSize: 25, color: Colors.green.shade600),
-            ),
-            choice == 0
-                ? ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        choice = 1;
-                      });
-                    },
-                    child: const Text(
-                      "Start",
-                      style: TextStyle(fontSize: 25),
-                    ))
-                : ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        choice = 1;
-                        index0 = 0;
-                        index1 = 0;
-                        index2 = 0;
-                        index3 = 0;
-                        index4 = 0;
-                        index5 = 0;
-                        index6 = 0;
-                        index7 = 0;
-                        index8 = 0;
-                      });
-                    },
-                    child: const Text(
-                      "Reset",
-                      style: TextStyle(fontSize: 25),
-                    )),
-          ]),
+                          index0 = 0;
+                          index1 = 0;
+                          index2 = 0;
+                          index3 = 0;
+                          index4 = 0;
+                          index5 = 0;
+                          index6 = 0;
+                          index7 = 0;
+                          index8 = 0;
+                        });
+                      },
+                      child: const Text(
+                        "Reset",
+                        style: TextStyle(fontSize: 25),
+                      )),
+            ]),
+          ),
         ),
       ),
     );
